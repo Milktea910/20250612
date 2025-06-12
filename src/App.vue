@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar>
+    <v-app-bar class="bg-blue">
       <v-container class="d-flex align-center">
         <v-app-bar-title>番茄鐘</v-app-bar-title>
         <v-btn prepend-icon="mdi-home" to="/">首頁</v-btn>
@@ -21,3 +21,8 @@
 <script setup>
 //
 </script>
+<style scoped>
+.bg-blue {
+  background: rgb(0, 110, 255);
+}
+</style>
