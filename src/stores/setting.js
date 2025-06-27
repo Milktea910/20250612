@@ -10,7 +10,7 @@ export const useSettingsStore = defineStore(
     ]
 
     const selected = ref(1)
-    const theme = ref('')
+    const theme = ref('white')
 
     const selectedAlarm = computed(() => {
       const i = alarms.findIndex(alarm => alarm.id === selected.value)
