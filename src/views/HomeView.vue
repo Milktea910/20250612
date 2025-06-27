@@ -4,7 +4,12 @@
       <v-col cols="12">
         <h1>目前事項</h1>
         <h2>{{ lists.currentItem }}</h2>
-        <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="white" :data="data" />
+        <DigitNumber
+          v-for="(data, i) in timeLeftText"
+          :key="i"
+          :color="setting.theme"
+          :data="data"
+        />
       </v-col>
       <v-col cols="12">
         <v-btn
@@ -95,3 +100,5 @@ const timeLeftText = computed(() => {
   return m + ':' + s
 })
 </script>
+
+<style></style>
