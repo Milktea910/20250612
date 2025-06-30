@@ -1,9 +1,14 @@
 <template>
-  <v-container>
+  <v-container class="fill-height d-flex flex-column justify-center align-center text-center">
     <v-row>
       <v-col cols="12">
+        <h1>現在時間</h1>
+        <h1>{{ nowText }}</h1>
+      </v-col>
+      <v-col cols="12">
         <h1>目前事項</h1>
-        <h2>{{ lists.currentItem }}</h2>
+        <br />
+        <h1>{{ lists.currentItem.length > 0 ? lists.currentItem : '沒有事項' }}</h1>
         <DigitNumber
           v-for="(data, i) in timeLeftText"
           :key="i"
@@ -36,6 +41,21 @@ import { useSettingsStore } from '@/stores/setting'
 
 const lists = useListStore()
 const setting = useSettingsStore()
+const now = ref(new Date())
+
+setInterval(() => {
+  now.value = new Date()
+}, 1000)
+
+const nowText = computed(() => {
+  const year = now.value.getFullYear()
+  const month = (now.value.getMonth() + 1).toString().padStart(2, '0')
+  const date = now.value.getDate().toString().padStart(2, '0')
+  const hours = now.value.getHours().toString().padStart(2, '0')
+  const minutes = now.value.getMinutes().toString().padStart(2, '0')
+  const seconds = now.value.getSeconds().toString().padStart(2, '0')
+  return `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`
+})
 
 const STATUS = {
   STOP: 0,

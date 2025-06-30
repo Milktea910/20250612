@@ -59,7 +59,7 @@ export const useListStore = defineStore(
     }
 
     const setCurrentItem = () => {
-      currentItem.value = isBreak.value ? '休息時間' : items.value.shift().text
+      currentItem.value = isBreak.value ? '休息時間' : items.value.shift().text || '沒有事項'
     }
 
     const countdown = () => {

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="width: 65%">
     <v-row>
       <v-col cols="12">
         <h1 class="text-center">未完成</h1>

@@ -39,7 +39,6 @@ const setting = useSettingsStore()
 
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-  console.log(setting.theme)
   setting.theme = theme.global.current.value.dark ? 'white' : 'black'
 }
 </script>
